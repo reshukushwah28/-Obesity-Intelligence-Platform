@@ -40,17 +40,3 @@ Preprocessing: Handled categorical encoding (OneHot) and numerical scaling (Stan
 Optimization: Utilized Gradient Boosting variants to handle non-linear relationships in lifestyle data.
 
 Deployment: Optimized the model size and inference speed for real-time response on the dashboard.
-
-⚙️ Setup & Installation
-Clone the repository:
-
-Bash
-git clone https://github.com/your-username/obesity-intelligence-platform.git
-Install dependencies:
-
-Bash
-pip install -r requirements.txt
-Run the platform:
-
-Bash
-streamlit run app/streamlit_app.py
