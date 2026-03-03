@@ -1,42 +1,79 @@
-# -Obesity-Intelligence-Platform
-An End-to-End AI Solution for Health Risk Assessment &amp; Analysis 
-📌 Project Overview
-This project is a production-grade health analytics platform that uses advanced Machine Learning to assess obesity risks. Unlike basic models, this platform features a Dual-Engine Architecture:
+# 🏥 Obesity Intelligence Platform
 
-Classification Engine: Categorizes users into 7 specific obesity risk levels.
+**v2.0 - Enterprise Edition**
 
-Regression Engine: Predicts an "Expected Healthy Weight" based on individual lifestyle metrics to quantify the health gap.
+A production-grade AI platform for Obesity Risk Assessment and Personalized Health Recommendations.
+This project uses an ensemble of advanced Machine Learning models (Random Forest, Gradient Boosting, etc.) to provide accurate multiclass classification and regression analysis.
 
-🚀 Key Features for Placement Highlights
-Automated Model Selection: A custom training pipeline that evaluates XGBoost, LightGBM, CatBoost, and Random Forest, automatically saving the best-performing model based on cross-validation.
+## ✨ New Features in v2.0
+- **Multi-Model Intelligence**: Automatically trains and selects the best model from Random Forest, Gradient Boosting, XGBoost, LightGBM, and CatBoost.
+- **Dual-Prediction Engines**:
+  - **Classification**: Predicts Obesity Risk Level (7 Categories).
+  - **Regression**: Estimates "Expected Weight" based on lifestyle to quantify health gaps.
+- **Interactive Health Dashboard**: A modern Streamlit UI with animated gauges, probability distributions, and risk meters.
+- **Explainable AI (XAI)**: Integrated feature importance analysis to explain *why* a risk level was predicted.
+- **Smart Recommendations**: Hybrid Rule-ML engine providing actionable lifestyle advice.
 
-Advanced Feature Engineering: Custom logic to calculate BMI, Lifestyle Scores (Activity vs. Technology usage), and Hydration Indices.
+## 📂 Project Structure
 
-Explainable AI (XAI): Integrated SHAP values to explain the "Why" behind every prediction, making the AI transparent and trustworthy.
+```
+MLProject/
+├── app/
+│   ├── streamlit_app.py    # Main Platform Application
+│   └── style.css           # Modern Healthcare Theme
+├── artifacts/             # Saved Models & Metadata
+├── data/
+│   └── ObesityDataSet...csv
+├── src/
+│   ├── features.py         # 🔍 Centralized Feature Engineering
+│   ├── train_platform.py   # 🚂 End-to-End Training Pipeline
+│   └── __init__.py
+├── requirements.txt        # Dependencies
+└── README.md
+```
 
-Interactive Dashboard: A modern UI built with Streamlit and Plotly, featuring real-time "What-If" analysis for weight management.
+## � Quick Start
 
-🛠️ Tech Stack
-Language: Python 3.x
+1. **Install Requirements**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Machine Learning: Scikit-Learn, XGBoost, LightGBM, CatBoost
+2. **Train the Platform**
+   This determines the best models for your data and saves the artifacts.
+   ```bash
+   python src/train_platform.py
+   ```
+   *Note: This script automatically handles cross-validation and selects between XGBoost, LightGBM, etc. based on availability.*
 
-Data Processing: Pandas, NumPy
+3. **Launch the Dashboard**
+   ```bash
+   streamlit run app/streamlit_app.py
+   ```
 
-Visualization: Plotly, Seaborn, Matplotlib
+## 🧪 Model Details
 
-Deployment: Streamlit (Web UI), Joblib (Model Serialization)
+### Feature Engineering
+The system auto-calculates key health indicators:
+- **BMI**: Body Mass Index.
+- **Lifestyle Score**: Composite metric of Activity vs. Tech Usage.
+- **Hydration Index**: Normalized water intake.
+- **Calorie Risk**: Aggregation of high-calorie food & snacking habits.
 
-📂 Project Architecture
-Plaintext
-├── app/              # Streamlit Dashboard & Custom CSS
-├── artifacts/        # Trained Models (.joblib) and Metadata
-├── src/              # Core Logic: Feature Engineering & Training Pipeline
-├── requirements.txt  # Project Dependencies
-└── run_platform.bat  # One-click automation script
-📈 Performance & Methodology
-Preprocessing: Handled categorical encoding (OneHot) and numerical scaling (StandardScaler) using Scikit-Learn Pipelines to prevent data leakage.
+### Supported Models
+The training pipeline supports:
+- **RF**: Random Forest (Robust baseline)
+- **GBM**: Gradient Boosting (High accuracy)
+- **XGB**: XGBoost (State-of-the-art tabular)
+- **LGBM**: LightGBM (Speed & Performance)
+- **Cat**: CatBoost (Categorical optimization)
+- **NN**: MLP Neural Network (Complex patterns)
 
-Optimization: Utilized Gradient Boosting variants to handle non-linear relationships in lifestyle data.
+## 📊 Dashboard Overview
+- **Diagnosis Tab**: Instant prediction with confidence score.
+- **Weight Lab**: "What-if" analysis for weight goals.
+- **Metrics**: Visual gauges for BMI and Lifestyle scores.
+- **Recs**: Automated, safe lifestyle suggestions.
 
-Deployment: Optimized the model size and inference speed for real-time response on the dashboard.
+---
+*Developed for Advanced Healthcare AI Portfolio.*
